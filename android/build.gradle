@@ -1,6 +1,7 @@
 group 'com.onesignal.flutter'
 version '5.2.2'
 
+ext.kotlin_version = '2.0.10'
 buildscript {
     repositories {
         google()
@@ -22,7 +23,7 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 31
     // Condition for namespace compatibility in AGP <4.2
     if (project.android.hasProperty("namespace")) {
         namespace 'com.onesignal.flutter'
@@ -32,6 +33,7 @@ android {
         minSdkVersion 23
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    
     lintOptions {
         disable 'InvalidPackage'
     }
